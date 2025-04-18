@@ -7,6 +7,6 @@ import com.expenses.app.domain.entity.Category;
 public interface CategoryGateway {
     Category createCategory(Category category);
     Category getCategoryById(UUID categoryId);
-    Category updateCategory(Category category);
+    Category updateCategory(UUID id, Category category);
     
 }

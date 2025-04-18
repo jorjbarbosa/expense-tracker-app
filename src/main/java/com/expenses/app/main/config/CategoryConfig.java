@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import com.expenses.app.application.gateways.CategoryGateway;
 import com.expenses.app.application.usecases.category.CreateCategoryInteractor;
 import com.expenses.app.application.usecases.category.GetCategoryInteractor;
+import com.expenses.app.application.usecases.category.UpdateCategoryInteractor;
 import com.expenses.app.infrastructure.gateways.CategoryRepositoryGateway;
 import com.expenses.app.infrastructure.mappers.CategoryMapper;
 import com.expenses.app.infrastructure.persistence.repository.CategoryRepository;
@@ -25,5 +26,10 @@ public class CategoryConfig {
     @Bean
     GetCategoryInteractor getCategoryUseCase(CategoryGateway categoryGateway) {
         return new GetCategoryInteractor(categoryGateway);
+    }
+
+    @Bean
+    UpdateCategoryInteractor updateCategoryUseCase(CategoryGateway categoryGateway) {
+        return new UpdateCategoryInteractor(categoryGateway);
     }
 }

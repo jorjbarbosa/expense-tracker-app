@@ -33,10 +33,13 @@ public class CategoryRepositoryGateway implements CategoryGateway {
     }
 
     @Override
-    public Category updateCategory(Category category) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateCategory'");
+    public Category updateCategory(UUID id, Category category) {
+        CategoryEntity categoryEntity = categoryRepository
+            .findById(id)
+            .orElse(null);
+
+        categoryEntity.setName(category.name());
+
+        return categoryMapper.mapToDomain(categoryRepository.save(categoryEntity));
     }
-
-
 }
