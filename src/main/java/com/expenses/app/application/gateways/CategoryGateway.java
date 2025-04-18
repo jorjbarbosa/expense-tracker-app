@@ -8,5 +8,4 @@ public interface CategoryGateway {
     Category createCategory(Category category);
     Category getCategoryById(UUID categoryId);
     Category updateCategory(UUID id, Category category);
-    
 }

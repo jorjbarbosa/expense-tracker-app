@@ -8,11 +8,11 @@ import com.expenses.app.infrastructure.mappers.CategoryMapper;
 import com.expenses.app.infrastructure.persistence.entity.CategoryEntity;
 import com.expenses.app.infrastructure.persistence.repository.CategoryRepository;
 
-public class CategoryRepositoryGateway implements CategoryGateway {
+public class CategoryGatewayImpl implements CategoryGateway {
     private final CategoryRepository categoryRepository;
     private final CategoryMapper categoryMapper;
 
-    public CategoryRepositoryGateway(CategoryRepository categoryRepository, CategoryMapper categoryMapper) {
+    public CategoryGatewayImpl(CategoryRepository categoryRepository, CategoryMapper categoryMapper) {
         this.categoryRepository = categoryRepository;
         this.categoryMapper = categoryMapper;
     }

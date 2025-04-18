@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import com.expenses.app.application.gateways.UserGateway;
 import com.expenses.app.application.usecases.user.CreateUserInteractor;
 import com.expenses.app.application.usecases.user.GetUserInteractor;
-import com.expenses.app.infrastructure.gateways.UserRepositoryGateway;
+import com.expenses.app.infrastructure.gateways.UserGatewayImpl;
 import com.expenses.app.infrastructure.mappers.UserMapper;
 import com.expenses.app.infrastructure.persistence.repository.UserRepository;
 
@@ -15,7 +15,7 @@ public class UserConfig {
 
     @Bean
     UserGateway userGateway(UserRepository userRepository, UserMapper userMapper) {
-        return new UserRepositoryGateway(userRepository, userMapper);
+        return new UserGatewayImpl(userRepository, userMapper);
     }
     
     @Bean

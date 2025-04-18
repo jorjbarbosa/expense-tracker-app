@@ -7,7 +7,7 @@ import com.expenses.app.application.gateways.CategoryGateway;
 import com.expenses.app.application.usecases.category.CreateCategoryInteractor;
 import com.expenses.app.application.usecases.category.GetCategoryInteractor;
 import com.expenses.app.application.usecases.category.UpdateCategoryInteractor;
-import com.expenses.app.infrastructure.gateways.CategoryRepositoryGateway;
+import com.expenses.app.infrastructure.gateways.CategoryGatewayImpl;
 import com.expenses.app.infrastructure.mappers.CategoryMapper;
 import com.expenses.app.infrastructure.persistence.repository.CategoryRepository;
 
@@ -15,7 +15,7 @@ import com.expenses.app.infrastructure.persistence.repository.CategoryRepository
 public class CategoryConfig {
     @Bean
     CategoryGateway categoryGateway(CategoryRepository categoryRepository, CategoryMapper categoryMapper) {
-        return new CategoryRepositoryGateway(categoryRepository, categoryMapper);
+        return new CategoryGatewayImpl(categoryRepository, categoryMapper);
     }
 
     @Bean

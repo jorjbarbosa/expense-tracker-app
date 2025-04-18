@@ -8,12 +8,12 @@ import com.expenses.app.infrastructure.mappers.UserMapper;
 import com.expenses.app.infrastructure.persistence.entity.UserEntity;
 import com.expenses.app.infrastructure.persistence.repository.UserRepository;
 
-public class UserRepositoryGateway implements UserGateway  {
+public class UserGatewayImpl implements UserGateway  {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
-    public UserRepositoryGateway(UserRepository userRepository, UserMapper userMapper) {
+    public UserGatewayImpl(UserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
         this.userMapper = userMapper;
  
